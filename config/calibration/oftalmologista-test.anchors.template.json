@@ -1,0 +1,36 @@
+{
+  "updatedAt": "",
+  "screen": {
+    "width": 0,
+    "height": 0
+  },
+  "anchors": {
+    "editor.audioTab": {
+      "description": "Aba de áudio do inspector lateral."
+    },
+    "editor.audio.noiseReductionToggle": {
+      "description": "Toggle Reduzir ruído."
+    },
+    "editor.audio.normalizeVolumeToggle": {
+      "description": "Toggle Normalizar nível de volume."
+    },
+    "editor.audio.volumeInput": {
+      "description": "Campo do volume em dB."
+    },
+    "editor.adjustmentTab": {
+      "description": "Aba Ajuste ou Ajuste personalizado."
+    },
+    "editor.captionsTab": {
+      "description": "Aba Legendas."
+    },
+    "editor.captions.autoCaptionButton": {
+      "description": "Botão Legenda automática."
+    },
+    "editor.timeline.nextClip": {
+      "description": "Próximo clipe na timeline para revisão de trim."
+    },
+    "editor.timeline.nextTransition": {
+      "description": "Próxima junção entre clipes para transição."
+    }
+  }
+}

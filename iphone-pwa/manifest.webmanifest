@@ -1,0 +1,19 @@
+{
+  "name": "Video Edition iPhone",
+  "short_name": "Video Edition",
+  "description": "Editor de videos instalavel para iPhone.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eff2eb",
+  "theme_color": "#0f332b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

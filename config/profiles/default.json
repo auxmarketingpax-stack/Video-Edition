@@ -1,0 +1,129 @@
+﻿{
+    "name":  "default",
+    "sourceFolder":  "",
+    "workspaceRoot":  ".automation-work/default",
+    "excludeFiles":  [
+
+                     ],
+    "videoExtensions":  [
+                            ".mp4",
+                            ".mov",
+                            ".m4v",
+                            ".avi",
+                            ".mkv"
+                        ],
+    "preparation":  {
+                        "recursive":  false,
+                        "stagingFolder":  "prepared",
+                        "manifestFolder":  "manifests",
+                        "copyUnchangedFiles":  true,
+                        "preserveSourceExtensionOnCopy":  true,
+                        "prefixWidth":  3,
+                        "outputExtension":  ".mp4",
+                        "ffmpegVideoCodec":  "libx264",
+                        "ffmpegAudioCodec":  "aac",
+                        "ffmpegVideoCrf":  17,
+                        "ffmpegAudioBitrate":  "192k",
+                        "ffmpegPreset":  "medium"
+                    },
+    "silence":  {
+                    "enabled":  false,
+                    "useSpeechBoundaries":  true,
+                    "noiseThresholdDb":  -35,
+                    "minimumDurationSeconds":  0.2,
+                    "leadingDetectionSlackSeconds":  0.1,
+                    "trailingDetectionSlackSeconds":  0.15,
+                    "maxHeadTrimSeconds":  3.0,
+                    "maxTailTrimSeconds":  4,
+                    "keepHeadPaddingSeconds":  0.02,
+                    "keepTailPaddingSeconds":  0.18,
+                    "extraHeadTrimSeconds":  0,
+                    "extraTailTrimSeconds":  0,
+                    "speechHeadPaddingSeconds":  0.02,
+                    "speechHeadTrimBiasSeconds":  0,
+                    "speechHeadTrimBiasAfterDiscardSeconds":  0.0,
+                    "speechTailPaddingSeconds":  0.22,
+                    "discardLeadingSegmentBeforeSeconds":  0.2,
+                    "discardLeadingSegmentMaxWords":  1,
+                    "discardLeadingSegmentMaxDurationSeconds":  0.45,
+                    "discardLeadingSegmentMinGapSeconds":  0.8,
+                    "minimumOutputDurationSeconds":  0.75
+                },
+    "capcut":  {
+                   "launchCommand":  "C:\\Users\\wendller.ferreira\\AppData\\Local\\CapCut\\Apps\\9.1.0.3860\\CapCut.exe",
+                   "launchArguments":  [
+                                           "--force-renderer-accessibility"
+                                       ],
+                   "projectNameFromFolder":  true,
+                   "calibrationFile":  "config/calibration/default.anchors.json",
+                   "effects":  [
+                                   {
+                                       "name":  "Aprimorar",
+                                       "intensity":  42
+                                   },
+                                   {
+                                       "name":  "4K",
+                                       "intensity":  13
+                                   },
+                                   {
+                                       "name":  "RetrÃ´ americano",
+                                       "intensity":  34
+                                   },
+                                   {
+                                       "name":  "Mar sem nuvens",
+                                       "intensity":  21
+                                   },
+                                   {
+                                       "name":  "Calma",
+                                       "intensity":  26
+                                   }
+                               ],
+                   "adjustments":  {
+                                       "temp":  5,
+                                       "matiz":  -3,
+                                       "sombra":  -3,
+                                       "brancos":  3,
+                                       "brilho":  5
+                                   },
+                   "effectsEnabled":  true,
+                   "adjustmentsEnabled":  true,
+                   "audio":  {
+                                 "enabled":  true,
+                                 "noiseReduction":  true,
+                                 "normalizeVolume":  true,
+                                 "volumeDb":  8.9
+                             },
+                   "backgroundMusic":  {
+                                           "enabled":  false,
+                                           "path":  "",
+                                           "volumeDb":  -21.0,
+                                           "startMode":  "auto_continuous",
+                                           "sourceStartSeconds":  0.0,
+                                           "analysisStepSeconds":  0.5,
+                                           "leadFocusSeconds":  3.0,
+                                           "silenceFloorRatio":  0.16,
+                                           "absoluteSilenceFloor":  0.01
+                                       },
+                   "captions":  {
+                                    "enabled":  true,
+                                    "sourceLanguage":  "PortuguÃªs (Brasil)",
+                                    "bilingualMode":  "Nenhum",
+                                    "minWordsPerLine":  1,
+                                    "maxWordsPerLine":  3,
+                                    "font":  "Neulis Alt Bold",
+                                    "fontSize":  10,
+                                    "color":  "Branco",
+                                    "positionX":  0,
+                                    "positionY":  -610,
+                                    "shadowColor":  "Preto",
+                                    "shadowOpacityPercent":  16,
+                                    "shadowBlurPercent":  13,
+                                    "shadowDistance":  5,
+                                    "shadowAngleDegrees":  -45
+                                },
+                   "transitions":  {
+                                       "enabled":  true,
+                                       "name":  "Esmaecimento preto"
+                                   }
+               }
+}

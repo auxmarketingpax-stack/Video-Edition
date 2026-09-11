@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Edition</title>
+    <link rel="icon" href="../assets/logo.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-mark" src="../assets/logo.svg" alt="" />
+          <div>
+            <p class="eyebrow">Video Edition</p>
+            <h1>Automacao de videos</h1>
+          </div>
+        </div>
+        <div class="status" id="statusPill">Pronto</div>
+      </header>
+
+      <section class="mode-panel">
+        <div>
+          <p class="eyebrow">Modo de edição</p>
+          <h2>Escolha onde o projeto será finalizado</h2>
+        </div>
+        <div class="mode-options">
+          <label class="mode-card">
+            <input type="radio" name="workflowMode" value="desktop" checked />
+            <span>Desktop</span>
+            <small>Filtros, ajustes e legenda formatada do padrão atual.</small>
+          </label>
+          <label class="mode-card">
+            <input type="radio" name="workflowMode" value="mobile" />
+            <span>Celular</span>
+            <small>Legenda padrão, texto organizado e visual próprio do app mobile.</small>
+          </label>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="panel source-panel">
+          <div class="panel-head">
+            <span class="step">01</span>
+            <h2>Pasta</h2>
+          </div>
+          <button class="folder-drop" id="selectFolder">
+            <span id="folderTitle">Selecionar pasta dos videos</span>
+            <small id="folderMeta">Nenhuma pasta selecionada</small>
+          </button>
+
+          <label class="field">
+            <span>Caminho da pasta</span>
+            <div class="inline-input">
+              <input id="sourceFolderPath" type="text" placeholder="Ex: C:\Wendller\Videos" />
+              <button class="icon-button" id="selectFolderPath" title="Selecionar pasta">...</button>
+            </div>
+          </label>
+
+          <label class="field">
+            <span>Nome do projeto</span>
+            <input id="projectName" type="text" placeholder="Nome no CapCut" />
+          </label>
+
+          <label class="field">
+            <span>Projeto base</span>
+            <div class="inline-input">
+              <input id="templateDraft" type="text" />
+              <button class="icon-button" id="selectTemplate" title="Selecionar projeto base">...</button>
+            </div>
+          </label>
+
+          <label class="field">
+            <span>Ignorar arquivos</span>
+            <textarea id="excludeFiles" rows="4" placeholder="Um nome por linha"></textarea>
+          </label>
+        </div>
+
+        <div class="panel actions-panel">
+          <div class="panel-head">
+            <span class="step">02</span>
+            <h2>Acoes</h2>
+          </div>
+          <div class="action-grid">
+            <label class="action active">
+              <input type="checkbox" id="actionTrim" checked />
+              <span>Cortar silencio</span>
+            </label>
+            <label class="action active">
+              <input type="checkbox" id="actionAudio" checked />
+              <span>Ruido + normalizar</span>
+            </label>
+            <label class="action">
+              <input type="checkbox" id="actionMuteVideo" />
+              <span>Silenciar videos</span>
+            </label>
+            <label class="action active">
+              <input type="checkbox" id="actionEffects" checked />
+              <span>Filtros</span>
+            </label>
+            <label class="action active">
+              <input type="checkbox" id="actionAdjustments" checked />
+              <span>Ajuste</span>
+            </label>
+            <label class="action active">
+              <input type="checkbox" id="actionCaptions" checked />
+              <span>Legendas</span>
+            </label>
+            <label class="action active">
+              <input type="checkbox" id="actionTransitions" checked />
+              <span>Transicoes</span>
+            </label>
+            <label class="action">
+              <input type="checkbox" id="actionMusic" checked />
+              <span>Musica</span>
+            </label>
+            <label class="action">
+              <input type="checkbox" id="recursive" />
+              <span>Subpastas</span>
+            </label>
+          </div>
+        </div>
+
+        <aside class="panel settings-panel">
+          <div class="panel-head">
+            <span class="step">03</span>
+            <h2>Midia e final</h2>
+          </div>
+          <label class="field compact">
+            <span>Volume dos videos</span>
+            <input id="videoVolumeDb" type="number" step="0.1" value="8.9" />
+          </label>
+          <label class="field compact">
+            <span>Final</span>
+            <select id="endingPreset">
+              <option value="auto" selected>Automatico</option>
+              <option value="pax_na_rua">Pax na Rua</option>
+              <option value="momento_pax_saude">Momento Pax Saude</option>
+              <option value="pax_rio_verde">Pax Rio Verde</option>
+              <option value="pax_montividiu">Pax Montividiu</option>
+              <option value="none">Nenhum</option>
+            </select>
+          </label>
+          <label class="field compact">
+            <span>Capa inicial</span>
+            <div class="inline-input">
+              <input id="introCoverPath" type="text" placeholder="Opcional: imagem ou video antes" />
+              <button class="icon-button" id="selectIntroCover" title="Selecionar capa inicial">...</button>
+            </div>
+          </label>
+          <label class="field compact">
+            <span>Capa final</span>
+            <div class="inline-input">
+              <input id="outroCoverPath" type="text" placeholder="Opcional: imagem ou video depois" />
+              <button class="icon-button" id="selectOutroCover" title="Selecionar capa final">...</button>
+            </div>
+          </label>
+          <label class="field compact">
+            <span>Pasta de musicas</span>
+            <div class="inline-input">
+              <input id="musicFolderPath" type="text" placeholder="Ex: C:\Wendller\Musicas" />
+              <button class="icon-button" id="selectMusicFolder" title="Selecionar pasta de musicas">...</button>
+            </div>
+          </label>
+          <label class="field compact">
+            <span>Musica manual</span>
+            <div class="inline-input">
+              <input id="musicPath" type="text" placeholder="Opcional: escolher uma faixa fixa" />
+              <button class="icon-button" id="selectMusic" title="Selecionar musica">...</button>
+            </div>
+          </label>
+          <label class="field compact">
+            <span>Volume da musica</span>
+            <input id="musicVolumeDb" type="number" step="0.5" value="-22" />
+          </label>
+
+          <div class="run-box">
+            <button class="primary" id="runButton">Criar no CapCut</button>
+            <button class="secondary" id="stopButton" disabled>Parar</button>
+          </div>
+        </aside>
+      </section>
+
+      <section class="console-panel">
+        <div class="console-head">
+          <span>Execucao</span>
+          <button id="clearLog">Limpar</button>
+        </div>
+        <pre id="logOutput"></pre>
+      </section>
+    </main>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

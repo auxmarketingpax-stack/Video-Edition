@@ -1,0 +1,88 @@
+{
+  "name": "default-timeline",
+  "description": "Workflow híbrido para aplicar o padrão inicial no CapCut Desktop.",
+  "steps": [
+    {
+      "type": "launchCapCut"
+    },
+    {
+      "type": "checkpoint",
+      "message": "Confirme que o CapCut abriu na tela inicial. O fluxo correto começa criando o projeto dentro do CapCut."
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^n",
+      "delayMs": 600
+    },
+    {
+      "type": "checkpoint",
+      "message": "Se o atalho não abriu um projeto novo, crie o projeto manualmente no CapCut e deixe o editor pronto antes de continuar."
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^i",
+      "delayMs": 500
+    },
+    {
+      "type": "setClipboardText",
+      "valueFrom": "preparedFolder"
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^l",
+      "delayMs": 300
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^v{ENTER}",
+      "delayMs": 500
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^a{ENTER}",
+      "delayMs": 1200
+    },
+    {
+      "type": "checkpoint",
+      "message": "Confirme a importação dos clipes em ordem e coloque todos na timeline, caso o CapCut tenha importado só para a biblioteca."
+    },
+    {
+      "type": "checkpoint",
+      "message": "A partir deste ponto, os ajustes de silêncio, áudio, efeitos, ajustes personalizados, legendas e esmaecimento preto devem acontecer dentro do CapCut."
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^a",
+      "delayMs": 500
+    },
+    {
+      "type": "clickAnchor",
+      "anchor": "editor.audioTab"
+    },
+    {
+      "type": "clickAnchor",
+      "anchor": "editor.audio.noiseReductionToggle"
+    },
+    {
+      "type": "clickAnchor",
+      "anchor": "editor.audio.normalizeVolumeToggle"
+    },
+    {
+      "type": "clickAnchor",
+      "anchor": "editor.audio.volumeInput"
+    },
+    {
+      "type": "setClipboardText",
+      "valueFrom": "audioVolumeDb"
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^a^v{ENTER}",
+      "delayMs": 400
+    },
+    {
+      "type": "checkpoint",
+      "message": "Use as âncoras calibradas para aplicar dentro do CapCut: trim de silêncio, ajustes de áudio, efeitos, ajustes personalizados, legendas e transição preta entre os vídeos."
+    }
+  ]
+}

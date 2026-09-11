@@ -1,0 +1,6 @@
+node_modules/
+build/dist/
+.automation-work/
+scripts/__pycache__/
+*.pyc
+

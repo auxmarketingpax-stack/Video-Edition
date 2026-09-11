@@ -1,0 +1,35 @@
+﻿{
+    "name":  "beleza",
+    "sourceFolder":  "C:\\Wendller\\VDEOSC~1\\Beleza",
+    "workspaceRoot":  ".automation-work/beleza-capcut-only",
+    "excludeFiles":  [
+                         "Beleza (01.1).mov",
+                         "Beleza (04.1).mov"
+                     ],
+    "preparation":  {
+                        "recursive":  false,
+                        "stagingFolder":  "prepared",
+                        "manifestFolder":  "manifests"
+                    },
+    "silence":  {
+                    "enabled":  true,
+                    "noiseThresholdDb":  -33,
+                    "minimumDurationSeconds":  0.18,
+                    "keepHeadPaddingSeconds":  0.02,
+                    "keepTailPaddingSeconds":  0.18,
+                    "extraHeadTrimSeconds":  0,
+                    "extraTailTrimSeconds":  0,
+                    "maxTailTrimSeconds":  4,
+                    "speechHeadPaddingSeconds":  0.02,
+                    "speechHeadTrimBiasSeconds":  0,
+                    "speechTailPaddingSeconds":  0.22
+                },
+    "capcut":  {
+                   "projectName":  "Beleza",
+                   "backgroundMusic":  {
+                                           "enabled":  true,
+                                           "path":  "C:\\Wendller\\Flowers (Instrumental).mp4",
+                                           "volumeDb":  -22.0
+                                       }
+               }
+}

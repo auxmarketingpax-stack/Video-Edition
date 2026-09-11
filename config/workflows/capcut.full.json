@@ -1,0 +1,174 @@
+{
+  "name": "capcut-full",
+  "description": "Workflow completo para os passos 2 a 8 dentro do CapCut Desktop.",
+  "steps": [
+    {
+      "type": "launchCapCut"
+    },
+    {
+      "type": "checkpoint",
+      "message": "Confirme que o CapCut abriu na tela inicial."
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^n",
+      "delayMs": 700
+    },
+    {
+      "type": "checkpoint",
+      "message": "Se o projeto novo não abriu, crie manualmente no CapCut e deixe o editor pronto."
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^i",
+      "delayMs": 500
+    },
+    {
+      "type": "setClipboardText",
+      "valueFrom": "preparedFolder"
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^l",
+      "delayMs": 250
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^v{ENTER}",
+      "delayMs": 500
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^a{ENTER}",
+      "delayMs": 1200
+    },
+    {
+      "type": "checkpoint",
+      "message": "Garanta que todos os vídeos foram importados em ordem e colocados na timeline."
+    },
+    {
+      "type": "checkpoint",
+      "message": "Passo 2: calibre as âncoras de trim e rode o corte dentro do CapCut em cada faixa. Se o CapCut mudar a UI, faça essa parte manual e continue."
+    },
+    {
+      "type": "repeatSteps",
+      "countFrom": "clipCount",
+      "steps": [
+        {
+          "type": "checkpoint",
+          "message": "Trim do clipe atual: remova silêncio inicial, ação/sobra inicial e silêncio final dentro do CapCut. Depois avance para o próximo clipe."
+        },
+        {
+          "type": "clickAnchorIfPresent",
+          "anchor": "editor.timeline.nextClip"
+        }
+      ]
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^a",
+      "delayMs": 400
+    },
+    {
+      "type": "checkpoint",
+      "message": "Passo 3: aplicar ajustes de áudio em todos os clipes."
+    },
+    {
+      "type": "clickAnchor",
+      "anchor": "editor.audioTab"
+    },
+    {
+      "type": "clickAnchorIfPresent",
+      "anchor": "editor.audio.noiseReductionToggle"
+    },
+    {
+      "type": "clickAnchorIfPresent",
+      "anchor": "editor.audio.normalizeVolumeToggle"
+    },
+    {
+      "type": "clickAnchor",
+      "anchor": "editor.audio.volumeInput"
+    },
+    {
+      "type": "setClipboardText",
+      "valueFrom": "audioVolumeDb"
+    },
+    {
+      "type": "sendKeys",
+      "keys": "^a^v{ENTER}",
+      "delayMs": 400
+    },
+    {
+      "type": "checkpoint",
+      "message": "Passo 4: aplicar os efeitos externos até a duração total do vídeo."
+    },
+    {
+      "type": "repeatSteps",
+      "countFrom": "effectCount",
+      "steps": [
+        {
+          "type": "checkpoint",
+          "message": "Adicione o efeito configurado na timeline externa e ajuste a intensidade correspondente."
+        }
+      ]
+    },
+    {
+      "type": "checkpoint",
+      "message": "Passo 5: aplicar ajuste personalizado na timeline externa até o fim do vídeo."
+    },
+    {
+      "type": "clickAnchorIfPresent",
+      "anchor": "editor.adjustmentTab"
+    },
+    {
+      "type": "checkpoint",
+      "message": "Use as âncoras calibradas do painel de ajuste para Temp, Matiz, Sombra, Brancos e Brilho."
+    },
+    {
+      "type": "checkpoint",
+      "message": "Passo 6: gerar legendas em Português (Brasil) e sem legenda bilíngue."
+    },
+    {
+      "type": "clickAnchorIfPresent",
+      "anchor": "editor.captionsTab"
+    },
+    {
+      "type": "clickAnchorIfPresent",
+      "anchor": "editor.captions.autoCaptionButton"
+    },
+    {
+      "type": "checkpoint",
+      "message": "Selecione Idioma de origem Português (Brasil), Legendas bilíngues Nenhum e clique em Gerar."
+    },
+    {
+      "type": "checkpoint",
+      "message": "Passo 7: aplicar estilo da legenda em Básico > Aplicar a tudo."
+    },
+    {
+      "type": "checkpoint",
+      "message": "Depois de gerar a legenda, aplique fonte, tamanho, cor, posição e sombra com os valores do perfil."
+    },
+    {
+      "type": "checkpoint",
+      "message": "Quebra de linhas da legenda: exporte o SRT do CapCut, rode scripts/Format-CaptionsFile.ps1 e reimporte o SRT balanceado no mesmo projeto."
+    },
+    {
+      "type": "checkpoint",
+      "message": "Passo 8: aplicar Esmaecimento preto entre todos os vídeos."
+    },
+    {
+      "type": "repeatSteps",
+      "countFrom": "transitionCount",
+      "steps": [
+        {
+          "type": "checkpoint",
+          "message": "Aplique Esmaecimento preto na transição atual."
+        },
+        {
+          "type": "clickAnchorIfPresent",
+          "anchor": "editor.timeline.nextTransition"
+        }
+      ]
+    }
+  ]
+}

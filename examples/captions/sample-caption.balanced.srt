@@ -1,0 +1,12 @@
+﻿1
+00:00:00,000 --> 00:00:02,000
+Olá,
+tudo bem
+com você?
+
+2
+00:00:02,500 --> 00:00:04,500
+Hoje vamos falar
+sobre cirurgia
+refrativa.
+

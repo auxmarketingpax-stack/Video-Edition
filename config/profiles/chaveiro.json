@@ -1,0 +1,34 @@
+﻿{
+    "name":  "chaveiro",
+    "sourceFolder":  "C:\\Wendller\\VDEOSC~1\\Chaveiro",
+    "workspaceRoot":  ".automation-work/chaveiro-capcut-only",
+    "excludeFiles":  [
+                         "Chaveiro (01.1).mov"
+                     ],
+    "preparation":  {
+                        "recursive":  false,
+                        "stagingFolder":  "prepared",
+                        "manifestFolder":  "manifests"
+                    },
+    "silence":  {
+                    "enabled":  true,
+                    "noiseThresholdDb":  -33,
+                    "minimumDurationSeconds":  0.18,
+                    "keepHeadPaddingSeconds":  0.02,
+                    "keepTailPaddingSeconds":  0.18,
+                    "extraHeadTrimSeconds":  0,
+                    "extraTailTrimSeconds":  0,
+                    "maxTailTrimSeconds":  4,
+                    "speechHeadPaddingSeconds":  0.02,
+                    "speechHeadTrimBiasSeconds":  0,
+                    "speechTailPaddingSeconds":  0.22
+                },
+    "capcut":  {
+                   "projectName":  "Chaveiro",
+                   "backgroundMusic":  {
+                                           "enabled":  true,
+                                           "path":  "C:\\Wendller\\Roadtrip (Instrumental).mp4",
+                                           "volumeDb":  -24.0
+                                       }
+               }
+}

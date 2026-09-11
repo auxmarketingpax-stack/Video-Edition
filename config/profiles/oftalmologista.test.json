@@ -1,0 +1,33 @@
+﻿{
+    "name":  "oftalmologista",
+    "sourceFolder":  "C:\\Wendller\\VDEOSC~1\\Oftalmologista",
+    "workspaceRoot":  ".automation-work/oftalmologista-capcut-only",
+    "preparation":  {
+                        "recursive":  false,
+                        "stagingFolder":  "prepared",
+                        "manifestFolder":  "manifests"
+                    },
+    "silence":  {
+                    "enabled":  true,
+                    "noiseThresholdDb":  -33,
+                    "minimumDurationSeconds":  0.18,
+                    "keepHeadPaddingSeconds":  0.02,
+                    "keepTailPaddingSeconds":  0.18,
+                    "extraHeadTrimSeconds":  0,
+                    "extraTailTrimSeconds":  0,
+                    "maxTailTrimSeconds":  4,
+                    "speechHeadPaddingSeconds":  0.02,
+                    "speechHeadTrimBiasSeconds":  0,
+                    "speechTailPaddingSeconds":  0.22
+                },
+    "capcut":  {
+                   "projectName":  "Oftalmologista",
+                   "calibrationFile":  "config/calibration/oftalmologista-test.anchors.json",
+                   "preserveExistingVideoEdits":  true,
+                   "backgroundMusic":  {
+                                           "enabled":  true,
+                                           "path":  "C:\\Wendller\\Landscapes (Instrumental).mp4",
+                                           "volumeDb":  -20.0
+                                       }
+               }
+}

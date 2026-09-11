@@ -1,0 +1,31 @@
+﻿{
+    "name":  "prolab-b",
+    "sourceFolder":  "C:\\Wendller\\VDEOSC~1\\Prolab\\B",
+    "workspaceRoot":  ".automation-work/prolab-b-capcut-only",
+    "preparation":  {
+                        "recursive":  false,
+                        "stagingFolder":  "prepared",
+                        "manifestFolder":  "manifests"
+                    },
+    "silence":  {
+                    "enabled":  true,
+                    "noiseThresholdDb":  -33,
+                    "minimumDurationSeconds":  0.18,
+                    "keepHeadPaddingSeconds":  0.02,
+                    "keepTailPaddingSeconds":  0.18,
+                    "extraHeadTrimSeconds":  0,
+                    "extraTailTrimSeconds":  0,
+                    "maxTailTrimSeconds":  4,
+                    "speechHeadPaddingSeconds":  0.02,
+                    "speechHeadTrimBiasSeconds":  0,
+                    "speechTailPaddingSeconds":  0.22
+                },
+    "capcut":  {
+                   "projectName":  "Prolab B",
+                   "backgroundMusic":  {
+                                           "enabled":  true,
+                                           "path":  "C:\\Wendller\\Next To Me (Instrumental).mp4",
+                                           "volumeDb":  -23.0
+                                       }
+               }
+}

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f332b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Video Edition" />
+    <title>Video Edition iPhone</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/icon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div class="brand">
+          <img src="./assets/icon.svg" alt="" />
+          <div>
+            <p>Video Edition</p>
+            <h1>Editor para iPhone</h1>
+          </div>
+        </div>
+        <span id="statusPill">Pronto</span>
+      </header>
+
+      <section class="card install-card" id="installCard">
+        <strong>Instalar no iPhone</strong>
+        <span>Safari > Compartilhar > Adicionar à Tela de Início.</span>
+      </section>
+
+      <section class="grid">
+        <div class="card stack">
+          <div class="section-title">
+            <span>01</span>
+            <h2>Mídias</h2>
+          </div>
+
+          <label class="drop">
+            <input id="videoInput" type="file" accept="video/*" multiple />
+            <strong>Selecionar vídeos</strong>
+            <small>Escolha todos na ordem ou reorganize abaixo.</small>
+          </label>
+
+          <div class="two">
+            <label class="mini-drop">
+              <input id="introInput" type="file" accept="video/*,image/*" />
+              <span>Capa inicial</span>
+            </label>
+            <label class="mini-drop">
+              <input id="outroInput" type="file" accept="video/*,image/*" />
+              <span>Capa final</span>
+            </label>
+          </div>
+
+          <label class="mini-drop wide">
+            <input id="musicInput" type="file" accept="audio/*,video/*" />
+            <span>Música de fundo</span>
+          </label>
+
+          <div class="clip-list" id="clipList"></div>
+        </div>
+
+        <div class="card stack">
+          <div class="section-title">
+            <span>02</span>
+            <h2>Ações</h2>
+          </div>
+
+          <label class="toggle">
+            <input id="trimSilence" type="checkbox" checked />
+            <span>Cortar silêncio inicial/final</span>
+          </label>
+          <label class="toggle">
+            <input id="filters" type="checkbox" checked />
+            <span>Filtros mobile</span>
+          </label>
+          <label class="toggle">
+            <input id="keepOriginalAudio" type="checkbox" checked />
+            <span>Manter áudio dos vídeos</span>
+          </label>
+
+          <label class="field">
+            <span>Volume da música</span>
+            <input id="musicVolume" type="range" min="0" max="1" step="0.01" value="0.08" />
+          </label>
+
+          <label class="field">
+            <span>Formato</span>
+            <select id="resolution">
+              <option value="720x1280" selected>Vertical leve 720x1280</option>
+              <option value="1080x1920">Vertical alta 1080x1920</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Legenda manual opcional</span>
+            <textarea id="captionText" rows="4" placeholder="Uma frase por linha. O app divide em blocos curtos."></textarea>
+          </label>
+        </div>
+
+        <div class="card stack">
+          <div class="section-title">
+            <span>03</span>
+            <h2>Exportar</h2>
+          </div>
+
+          <canvas id="preview" width="720" height="1280"></canvas>
+          <button class="primary" id="exportButton">Exportar vídeo</button>
+          <a class="download hidden" id="downloadLink" download="video-edition.webm">Baixar vídeo</a>
+          <pre id="logOutput"></pre>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

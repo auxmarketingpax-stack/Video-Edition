@@ -1,0 +1,45 @@
+{
+  "name": "video-edition",
+  "version": "1.0.28",
+  "description": "Desktop platform for CapCut video automation workflows.",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "set ELECTRON_RUN_AS_NODE=& electron .",
+    "dist": "set CSC_IDENTITY_AUTO_DISCOVERY=false& set ELECTRON_RUN_AS_NODE=& electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.wendller.videoedition",
+    "productName": "Video Edition",
+    "directories": {
+      "output": "build/dist"
+    },
+    "files": [
+      "app/**/*",
+      "scripts/**/*",
+      "config/**/*",
+      "runtime/**/*",
+      "package.json",
+      "README.md"
+    ],
+    "asar": false,
+    "extraMetadata": {
+      "main": "app/main.js"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  }
+}
